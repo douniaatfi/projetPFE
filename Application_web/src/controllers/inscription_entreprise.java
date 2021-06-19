@@ -33,9 +33,9 @@ public class inscription_entreprise extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean res = false;
 		PrintWriter out=response.getWriter();
-		Entreprise e=new Entreprise(request.getParameter("nom"),request.getParameter("login"),request.getParameter("password"),request.getParameter("adresse"),Integer.parseInt(request.getParameter("tele")));
+		Entreprise e=new Entreprise(request.getParameter("nom"),request.getParameter("login"),request.getParameter("password"),request.getParameter("adresse"),Integer.parseInt(request.getParameter("tele")),request.getParameter("tempdispo"));
 	    try {
-		  res=ser_entreprise.AjouterEntreprise(e);
+		  res=ser_entreprise.AjouterEntreprise(e);  
 		  
 		} catch (ClassNotFoundException | SQLException e1) {
 			// TODO Auto-generated catch block

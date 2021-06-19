@@ -17,11 +17,11 @@ public class dao_user {
 		res = Connexion.Select("select * from user where login='"+login+"' and password='"+password+"'");
 		if(res.next()) {
 			if(res.getString(11).equals("admin")) {
-			   e = new Admin (res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5),res.getInt(6),res.getString(7),res.getString(10));
+			   e = new Admin (res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5),res.getString(6),res.getString(7),res.getString(10));
 			}else if(res.getString(11).equals("etudiant")) {
-		       e = new Etudiant (res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5),res.getInt(6),res.getString(7),res.getString(8),res.getString(9),res.getInt(10));
+		       e = new Etudiant (res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5),res.getString(6),res.getString(7),res.getString(8),res.getString(9),res.getInt(10));
 		       }else if(res.getString(11).equals("professeur")) {
-		       e = new Professeur (res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5),res.getInt(6),res.getString(7),res.getString(10));	   
+		       e = new Professeur (res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5),res.getString(6),res.getString(7),res.getString(10));	   
 		       }
 			}
 		Connexion.disconnect();

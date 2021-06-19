@@ -32,7 +32,7 @@ public class inscri_etudiant extends HttpServlet {
 		
 		boolean res = false;
 		PrintWriter out=response.getWriter();
-		Etudiant e = new Etudiant (request.getParameter("nom"),request.getParameter("prenom"),request.getParameter("login"),request.getParameter("password"),Integer.parseInt(request.getParameter("age")) ,request.getParameter("adresse"),request.getParameter("cin"),request.getParameter("cne") ,Integer.parseInt(request.getParameter("code_ap")));
+		Etudiant e = new Etudiant (request.getParameter("nom"),request.getParameter("prenom"),request.getParameter("login"),request.getParameter("password"),request.getParameter("date_naissance") ,request.getParameter("adresse"),request.getParameter("cin"),request.getParameter("cne") ,Integer.parseInt(request.getParameter("code_ap")));
 	    try {
 		  res=ser_etudiant.AjouterEtudiant(e);
 		  

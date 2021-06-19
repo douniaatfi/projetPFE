@@ -1,37 +1,39 @@
 package Entites;
 
+import java.sql.Date;
+
 public class User {
      private int id;
      private String nom;
      private String prenom;
      private String login;
      private String password;
-     private int age;
+     private String date_naissance;
      private String adresse;
      private String cin;
      
      
      
 	
-	public User(int id, String nom, String prenom, String login, String password, int age, String adresse,String cin) {
+	public User(int id, String nom, String prenom, String login, String password,String date_naissance, String adresse,String cin) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.login = login;
 		this.password = password;
-		this.age = age;
+		this.date_naissance = date_naissance;
 		this.adresse = adresse;
         this.cin = cin;
 	}
 	
-	public User( String nom, String prenom, String login, String password, int age, String adresse, String cin) {
+	public User( String nom, String prenom, String login, String password, String date_naissance, String adresse, String cin) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.login = login;
 		this.password = password;
-		this.age = age;
+		this.date_naissance = date_naissance;
 		this.adresse = adresse;
 		this.cin = cin;
 	}
@@ -39,6 +41,15 @@ public class User {
 	public User() {
 		super();
 	}
+	
+	public String getDate_naissance() {
+		return date_naissance;
+	}
+
+	public void setDate_naissance(String date_naissance) {
+		this.date_naissance = date_naissance;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -69,12 +80,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
+	
 	public String getAdresse() {
 		return adresse;
 	}
@@ -92,7 +98,7 @@ public class User {
      @Override
 	public String toString() {
 		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", login=" + login + ", password=" + password
-				+ ", age=" + age + ", adresse=" + adresse +
+				+ ", date_naissance=" + date_naissance + ", adresse=" + adresse +
 				"]";
 	}
 

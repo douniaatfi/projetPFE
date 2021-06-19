@@ -7,28 +7,39 @@ public class Entreprise {
     private String password;
     private String adresse;
     private int tele;
+    private String tempdispo;
     
-	public Entreprise(int identreprise, String nom, String login, String password, String adresse, int tele) {
-		super();
+	public Entreprise(int identreprise, String nom, String login, String password, String adresse, int tele , String tempdispo) {
+		   super();
 		this.identreprise = identreprise;
 		this.nom = nom;
 		this.login = login;
 		this.password = password;
 		this.adresse = adresse;
 		this.tele = tele;
+		this.tempdispo = tempdispo;
 	}
     
-	public Entreprise( String nom, String login, String password, String adresse, int tele) {
+	public Entreprise( String nom, String login, String password, String adresse, int tele, String tempdispo) {
 		super();
 		this.nom = nom;
 		this.login = login;
 		this.password = password;
 		this.adresse = adresse;
 		this.tele = tele;
+		this.tempdispo = tempdispo;
 	}
 
 	public Entreprise() {
 		super();
+	}
+
+	public String getTempdispo() {
+		return tempdispo;
+	}
+
+	public void setTempdispo(String tempdispo) {
+		this.tempdispo = tempdispo;
 	}
 
 	public int getIdentreprise() {
@@ -82,7 +93,7 @@ public class Entreprise {
 	@Override
 	public String toString() {
 		return "Entreprise [identreprise=" + identreprise + ", nom=" + nom + ", login=" + login + ", password="
-				+ password + ", adresse=" + adresse + ", tele=" + tele + "]";
+				+ password + ", adresse=" + adresse + ", tele=" + tele +",tempsdisponible="+ tempdispo+ "]";
 	}
 	
 	

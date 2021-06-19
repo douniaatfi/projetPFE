@@ -1,5 +1,7 @@
 package Entites;
 
+import java.sql.Date;
+
 public class Professeur extends User {
      private int idp;
      
@@ -18,14 +20,14 @@ public class Professeur extends User {
 		
 	}
 
-	public Professeur(String nom, String prenom, String login, String password, int age, String adresse, String cin) {
-		super(nom, prenom, login, password, age, adresse, cin);
+	public Professeur(String nom, String prenom, String login, String password, String date_naissance, String adresse, String cin) {
+		super(nom, prenom, login, password, date_naissance, adresse, cin);
 		
 	}
 
-	public Professeur(int idp, String nom, String prenom, String login, String password, int age, String adresse,
+	public Professeur(int idp, String nom, String prenom, String login, String password,String date_naissance, String adresse,
 			String cin) {
-		super(nom, prenom, login, password, age, adresse, cin);
+		super(nom, prenom, login, password, date_naissance, adresse, cin);
 		this.idp = idp;
 	}
 

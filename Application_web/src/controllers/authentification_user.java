@@ -51,7 +51,7 @@ public class authentification_user extends HttpServlet {
 	  		e.printStackTrace();
 	  	}
 	         if(en==null) {
-	        	 System.out.println("page d'inscription");
+	        	 System.out.println("page authentification");
 	      	      // response.sendRedirect("http://localhost:8080/Application_web/authentification_etudiant");
 	  	} else {
 	  		if(role.equals("admin")) {
@@ -65,6 +65,23 @@ public class authentification_user extends HttpServlet {
 	  		}
 	            }
 	  
-	         
+	         Entreprise u=null;
+	         try {
+	      	   u = Services.ser_entreprise.authentification(login, password);		
+	  	} catch (ClassNotFoundException | SQLException e) {
+	  		// TODO Auto-generated catch block
+	  		e.printStackTrace();
+	  	}
+	         if(u==null) {
+	        	 System.out.println("page d'inscription");
+	      	       //response.sendRedirect("http://localhost:8080/Application_web/Authentif_user");
+	  	} else {
+	  		System.out.println("page d'acceuil");
+	  		//HttpSession session=request.getSession();
+	  		//session.setAttribute("user", u);
+	      	  
+	      		// this.getServletContext().getRequestDispatcher("/WEB-INF/pages/professeur.jsp").include(request, response);
+	      	  	
+	            } 
 }
 }
