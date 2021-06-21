@@ -13,7 +13,7 @@ public class dao_etudiant {
 	  
 	public static int AjouterEtudiant(Etudiant e) throws SQLException, ClassNotFoundException {
 		Connexion.connect();
-		int res=Connexion.Maj("insert into user(nom,prenom,login,password,age,adresse,cin,cne,code_ap,role) values('"+e.getNom()+"','"+e.getPrenom()+"','"+e.getLogin()+"','"+e.getPassword()+"',"+e.getDate_naissance()+",'"+e.getAdresse()+"','"+e.getCin()+"','"+e.getCne()+"',"+e.getCode_ap()+", 'etudiant')");
+		int res=Connexion.Maj("insert into user(nom,prenom,login,password,date_naissance,adresse,cin,cne,code_ap,role) values('"+e.getNom()+"','"+e.getPrenom()+"','"+e.getLogin()+"','"+e.getPassword()+"',TO_DATE("+e.getDate_naissance()+",'YYYY-MM-DD'),'"+e.getAdresse()+"','"+e.getCin()+"','"+e.getCne()+"',"+e.getCode_ap()+", 'etudiant')");
 		Connexion.disconnect();
 		return res;
 	}

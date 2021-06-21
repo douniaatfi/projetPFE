@@ -2,26 +2,49 @@ package Dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import Entites.Exposer;
+import Entites.Groupe;
 
 public class dao_groupe {
-	public static void ajout_groupe() throws ClassNotFoundException, SQLException  {
+	public static int ajout_groupe(Groupe g) throws ClassNotFoundException, SQLException  {
     	Connexion.connect();
-    	int res=Connexion.Maj("");
+    	int res=Connexion.Maj("insert into groupe(nom,photogr,description,type)values('"+g.getNom()+"','"+g.getPhotogr()+"','"+g.getDescription()+"','groupe')");
     	Connexion.disconnect();
+    	return res;
     }
-    public static void modif_groupe() throws ClassNotFoundException, SQLException  {
+    public static int modif_groupe(Groupe g) throws ClassNotFoundException, SQLException  {
     	Connexion.connect();
-    	int res=Connexion.Maj("");
+    	int res=Connexion.Maj("update groupe set nom='"+g.getNom()+"'photogr='"+g.getPhotogr()+"'description='"+g.getDescription()+"'");
     	Connexion.disconnect();
+    	return res;
     }
-    public static void supp_groupe() throws ClassNotFoundException, SQLException  {
+    public static int supp_groupe(Groupe g) throws ClassNotFoundException, SQLException  {
     	Connexion.connect();
-    	int res=Connexion.Maj("");
+    	int res=Connexion.Maj("delete from groupe where id="+g.getIdgroupe());
     	Connexion.disconnect();
+    	return res;
     }
-    public static void consul_groupe() throws ClassNotFoundException, SQLException  {
+    public static Groupe consul_groupe(Groupe grp) throws ClassNotFoundException, SQLException  {
+    	Groupe g = null;
     	Connexion.connect();
-    	ResultSet res=Connexion.Select("");
+    	ResultSet res=Connexion.Select("select * from groupe where id="+grp.getIdgroupe());
+    	if(res.next()) {
+    	 g= new Groupe(res.getInt(1),res.getString(2),res.getString(3),res.getNString(4));	
+    	}
     	Connexion.disconnect();
+    	return g;
     }
+    public  ArrayList<Exposer> listeprof() throws SQLException, ClassNotFoundException{
+		ArrayList<Exposer> exposers = new ArrayList<Exposer>();
+		Connexion.connect();
+		ResultSet res = Connexion.Select("select * from groupe where type ='exposer'");
+		while(res.next()) {
+			Exposer exp =new Exposer(res.getInt(1), res.getString(2), res.getString(3),res.getString(4),res.getString(5),res.getString(6));
+			   exposers.add(exp);
+		}
+		Connexion.disconnect();
+		return exposers;
+	}
 }

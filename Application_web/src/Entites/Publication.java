@@ -1,19 +1,32 @@
 package Entites;
 
-import java.sql.Date;
-
 public class Publication {
      private int idpub;
-     private Date datepub;
-	
+     private String datepub;
+     private String contenupub;
+ 
+     
 	public Publication() {
 		super();
 	}
 
-	public Publication(int idpub, Date datepub) {
+	public Publication(int idpub, String datepub, String contenupub) {
 		super();
 		this.idpub = idpub;
 		this.datepub = datepub;
+		this.contenupub = contenupub;
+	}
+	public Publication( String datepub, String contenupub) {
+		super();
+		this.datepub = datepub;
+		this.contenupub = contenupub;
+	}
+	public String getContenupub() {
+		return contenupub;
+	}
+
+	public void setContenupub(String contenupub) {
+		this.contenupub = contenupub;
 	}
 
 	public int getIdpub() {
@@ -24,11 +37,11 @@ public class Publication {
 		this.idpub = idpub;
 	}
 
-	public Date getDatepub() {
+	public String getDatepub() {
 		return datepub;
 	}
 
-	public void setDatepub(Date datepub) {
+	public void setDatepub(String datepub) {
 		this.datepub = datepub;
 	}
 

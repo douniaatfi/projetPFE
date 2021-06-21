@@ -11,13 +11,13 @@ public class Offreemploi extends Offre{
 		super();
 	}
 	
-	public Offreemploi(int idofremp,String typecontrat, Double salaire, String nom, String description, String date, String contrainte) {
+	public Offreemploi(int idofremp, String nom, String description, String date, String contrainte,String typecontrat, Double salaire) {
 		super(nom, description, date, contrainte);
 		this.idofremp = idofremp;
 		this.typecontrat = typecontrat;
 		this.salaire = salaire;
 	}
-	public Offreemploi(String typecontrat, Double salaire, String nom, String description, String date, String contrainte) {
+	public Offreemploi( String nom, String description, String date, String contrainte , String typecontrat, Double salaire) {
 		super(nom, description, date, contrainte);
 	    this.typecontrat = typecontrat;
 		this.salaire = salaire;
