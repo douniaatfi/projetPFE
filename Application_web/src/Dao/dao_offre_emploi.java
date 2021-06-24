@@ -1,12 +1,12 @@
 package Dao;
 
-import java.sql.Date;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Entites.Offreemploi;
-import Entites.Professeur;
+
 
 public class dao_offre_emploi {
         public static int ajout_off_emploi(Offreemploi ofr) throws ClassNotFoundException, SQLException  {
@@ -39,7 +39,7 @@ public class dao_offre_emploi {
         }
         
 
-	    public  ArrayList<Offreemploi> listeprof() throws SQLException, ClassNotFoundException{
+	    public  ArrayList<Offreemploi> listeemploi() throws SQLException, ClassNotFoundException{
 			ArrayList<Offreemploi> ofremplois = new ArrayList<Offreemploi>();
 			Connexion.connect();
 			ResultSet res = Connexion.Select("select * from offre where type = 'emploi'");

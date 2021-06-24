@@ -1,6 +1,6 @@
 package Entites;
 
-import java.sql.Date;
+
 
 public class Offreemploi extends Offre{
      private int idofremp;
@@ -11,9 +11,9 @@ public class Offreemploi extends Offre{
 		super();
 	}
 	
-	public Offreemploi(int idofremp, String nom, String description, String date, String contrainte,String typecontrat, Double salaire) {
-		super(nom, description, date, contrainte);
-		this.idofremp = idofremp;
+	public Offreemploi(int idofr, String nom, String description, String date, String contrainte,String typecontrat, Double salaire) {
+		super(idofr ,nom, description, date, contrainte);
+		
 		this.typecontrat = typecontrat;
 		this.salaire = salaire;
 	}
@@ -23,12 +23,9 @@ public class Offreemploi extends Offre{
 		this.salaire = salaire;
 	}
 
+	
 	public int getIdofremp() {
 		return idofremp;
-	}
-
-	public void setIdofremp(int idofremp) {
-		this.idofremp = idofremp;
 	}
 
 	public String getTypecontrat() {
@@ -49,7 +46,7 @@ public class Offreemploi extends Offre{
 
 	@Override
 	public String toString() {
-		return "Offreemploi [idofremp=" + idofremp + ", typecontrat=" + typecontrat + ", salaire=" + salaire + "]";
+		return "Offreemploi [ typecontrat=" + typecontrat + ", salaire=" + salaire + "]";
 	}
 	
 

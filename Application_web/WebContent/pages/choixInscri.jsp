@@ -31,10 +31,14 @@
               <div class="card-header"><h4>Vous etes qui?</h4></div>
 
               <div class="card-body">
-                <form method="post" action="choix_inscription" class="needs-validation" novalidate="">
+                <form method="post" action="choix_role" class="needs-validation" novalidate="">
                   <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" type="text" class="form-control" name="rol" tabindex="1" required autofocus>
+                    <select name="role" class="form-control">
+                        <option >Etudiant</option>
+                        <option >Entreprise</option>
+                        <option >Professeur</option>
+                      </select>
+                    
                     <div class="invalid-feedback">
                       Please fill in your role
                     </div>
@@ -47,9 +51,9 @@
                 </form>
            
             </div>
-            <div class="mt-5 text-muted text-center">
-              vous n'avez pas un compte ? <a href="auth-register.html">S'inscrire</a>
-            </div>
+           
+           
+           
             <div class="simple-footer">
               Copyright &copy; FSBM-Community
             </div>

@@ -1,0 +1,73 @@
+#but{
+    background-color:;
+    color: white;
+}
+.span2{
+    font-size: 18px;
+    font-weight: 550;
+}
+.connex4{
+    margin-top: 2%;
+}
+.p3{
+    font-size: 14px;
+    text-align: center;
+}
+#connex5{
+    top: -554px;
+    height: 608px;
+    background-color: white;
+    opacity: 0.6;
+    display: none;
+}
+#connex6{
+    top: -600px;
+    height: 540px;
+    left:100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+}
+.p4{
+    font-weight: 645;
+    font-size: 32px;
+}
+.part{
+    margin-top: -4%;
+}
+.p5{
+    color: rgba(0, 0, 0, 0.603);
+}
+.connex7{
+    margin-top: 3%;
+}
+#i1{
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.603);
+    cursor: pointer;
+}
+.connex8{
+    margin-top: 2%;
+}
+.part2{
+    margin-top: 2%;
+}
+.p6{
+    color: rgba(0, 0, 0, 0.603);
+    font-size: 13px;
+    font-weight: 500;
+}
+.connex9{
+    margin-top: -4%;
+}
+.p7{
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.603);
+}
+.a1{
+    color: #1877f2;
+}
+.connex10{
+    margin-top: 2%;
+}

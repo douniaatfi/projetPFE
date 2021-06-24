@@ -1,54 +1,67 @@
 package Entites;
 
 public class Publication {
-     private int idpub;
-     private String datepub;
-     private String contenupub;
+     private int idpublication;
+     private String DatePu;
+     private String caption;
  
      
 	public Publication() {
 		super();
 	}
 
-	public Publication(int idpub, String datepub, String contenupub) {
+
+	public int getIdpublication() {
+		return idpublication;
+	}
+
+
+	public void setIdpublication(int idpublication) {
+		this.idpublication = idpublication;
+	}
+
+
+	public String getDatePu() {
+		return DatePu;
+	}
+
+
+	public void setDatePu(String datePu) {
+		DatePu = datePu;
+	}
+
+
+	public String getCaption() {
+		return caption;
+	}
+
+
+	public void setCaption(String caption) {
+		this.caption = caption;
+	}
+
+
+	public Publication(int idpublication, String datePu, String caption) {
 		super();
-		this.idpub = idpub;
-		this.datepub = datepub;
-		this.contenupub = contenupub;
+		this.idpublication = idpublication;
+		DatePu = datePu;
+		this.caption = caption;
 	}
-	public Publication( String datepub, String contenupub) {
+	public Publication (String datePu, String caption) {
 		super();
-		this.datepub = datepub;
-		this.contenupub = contenupub;
+		DatePu = datePu;
+		this.caption = caption;
 	}
-	public String getContenupub() {
-		return contenupub;
+	public Publication (String caption) {
+		super();
+		this.caption = caption;
 	}
-
-	public void setContenupub(String contenupub) {
-		this.contenupub = contenupub;
-	}
-
-	public int getIdpub() {
-		return idpub;
-	}
-
-	public void setIdpub(int idpub) {
-		this.idpub = idpub;
-	}
-
-	public String getDatepub() {
-		return datepub;
-	}
-
-	public void setDatepub(String datepub) {
-		this.datepub = datepub;
-	}
-
 	@Override
 	public String toString() {
-		return "Publication [idpub=" + idpub + ", datepub=" + datepub + "]";
+		return "Publication [idpublication=" + idpublication + ", DatePu=" + DatePu + ", caption=" + caption + "]";
 	}
+
+	
      
      
 }

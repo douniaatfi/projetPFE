@@ -9,25 +9,25 @@ import Entites.Professeur;
 
 public class dao_offre_stage {
         
-	public static int ajout_off_emploi(Offrestage ofr) throws ClassNotFoundException, SQLException  {
+	public static int ajout_off_stage(Offrestage ofr) throws ClassNotFoundException, SQLException  {
     	Connexion.connect();
     	int res=Connexion.Maj("insert into offre(nom, description, date, containt, type) values('"+ofr.getNom()+"','"+ofr.getDescription()+"',TO_DATE('"+ofr.getDate()+"','YYYY-MM-DD'),'"+ofr.getContrainte()+"','stage')");
     	Connexion.disconnect();
     	return res;
     }
-    public static int modif_off_emploi(Offrestage ofr) throws ClassNotFoundException, SQLException  {
+    public static int modif_off_stage(Offrestage ofr) throws ClassNotFoundException, SQLException  {
     	Connexion.connect();
     	int res=Connexion.Maj("update offre set nom ='"+ofr.getNom()+"',description ='"+ofr.getDescription()+"',Date = TO_DATE('"+ofr.getDate()+"','YYYY-MM-DD'),Contrainte ='"+ofr.getContrainte()+"'");
     	Connexion.disconnect();
     	return res;
     }
-    public static int supp_off_emploi(Offrestage offre) throws ClassNotFoundException, SQLException  {
+    public static int supp_off_stage(Offrestage offre) throws ClassNotFoundException, SQLException  {
     	Connexion.connect();
     	int res=Connexion.Maj("delete from offre where id="+offre.getIdofrstg());
     	Connexion.disconnect();
     	return res;
     }
-    public static Offrestage consul_off_emploi(Offrestage offre) throws ClassNotFoundException, SQLException  {
+    public static Offrestage consul_off_stage(Offrestage offre) throws ClassNotFoundException, SQLException  {
     	Connexion.connect();
     	Offrestage ofr = null;
     	ResultSet res=Connexion.Select("select * from offre where id ="+offre.getIdofrstg());
@@ -39,7 +39,7 @@ public class dao_offre_stage {
     }
     
 
-    public  ArrayList<Offrestage> listeprof() throws SQLException, ClassNotFoundException{
+    public  ArrayList<Offrestage> listestage() throws SQLException, ClassNotFoundException{
 		ArrayList<Offrestage> ofrstage = new ArrayList<Offrestage>();
 		Connexion.connect();
 		ResultSet res = Connexion.Select("select * from offre where type='stage'");

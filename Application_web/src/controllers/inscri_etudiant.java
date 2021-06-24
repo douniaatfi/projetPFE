@@ -24,7 +24,7 @@ public class inscri_etudiant extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/pages/inscription_etudiant.jsp").include(request, response);
+		
 		
 	}
 

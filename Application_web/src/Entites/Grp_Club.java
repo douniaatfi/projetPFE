@@ -1,18 +1,18 @@
 package Entites;
 
-public class Club extends Groupe{
+public class Grp_Club extends Groupe{
      private int idclub;
-
-	public Club() {
+     private User president;
+	public Grp_Club() {
 		super();
 		
 	}
-	 public Club( String nom, String photogr, String description) {
+	 public Grp_Club( String nom, String photogr, String description) {
 			super(nom, photogr, description);
 			
 		}
 	
-    public Club( int idclub, String nom, String photogr, String description) {
+    public Grp_Club( int idclub, String nom, String photogr, String description) {
 		super(nom, photogr, description);
 		this.idclub = idclub;
 	}

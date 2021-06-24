@@ -4,26 +4,31 @@ import java.sql.Date;
 
 public class Evenement {
       private int idevenm;
-      private String contenuev;
+      private String contenuEven;
       private String date;
-      private String urlimg;
+      private String Urlimg;
       
 	public Evenement() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Evenement(int idevenm, String contenuev, String date, String urlimg) {
+	public Evenement(int idevenm, String contenuEven, String date, String urlimg) {
 		super();
 		this.idevenm = idevenm;
-		this.contenuev = contenuev;
+		this.contenuEven = contenuEven;
 		this.date = date;
-		this.urlimg = urlimg;
+		this.Urlimg = urlimg;
 	}
 	public Evenement(String contenuev, String date, String urlimg) {
 		super();
-		this.contenuev = contenuev;
+		this.contenuEven = contenuev;
 		this.date = date;
-		this.urlimg = urlimg;
+		this.Urlimg = urlimg;
+	}
+	public Evenement(String contenuev, String urlimg) {
+		super();
+		this.contenuEven = contenuev;
+		this.Urlimg = urlimg;
 	}
 	public int getIdevenm() {
 		return idevenm;
@@ -31,11 +36,11 @@ public class Evenement {
 	public void setIdevenm(int idevenm) {
 		this.idevenm = idevenm;
 	}
-	public String getContenuev() {
-		return contenuev;
+	public String getContenuEven() {
+		return contenuEven;
 	}
-	public void setContenuev(String contenuev) {
-		this.contenuev = contenuev;
+	public void setContenuEven(String contenuev) {
+		this.contenuEven = contenuev;
 	}
 	public String getDate() {
 		return date;
@@ -45,14 +50,14 @@ public class Evenement {
 	}
 	
 	public String getUrlimg() {
-		return urlimg;
+		return Urlimg;
 	}
 	public void setUrlimg(String urlimg) {
-		this.urlimg = urlimg;
+		this.Urlimg = urlimg;
 	}
 	@Override
 	public String toString() {
-		return "Evenement [idevenm=" + idevenm + ", contenuev=" + contenuev + ", date=" + date + ", urlimage="+ urlimg + "]";
+		return "Evenement [idevenm=" + idevenm + ", contenuEven=" + contenuEven + ", date=" + date + ", Urlimage="+ Urlimg + "]";
 	}  
       
 }

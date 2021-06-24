@@ -1,6 +1,6 @@
 package Entites;
 
-import java.sql.Date;
+
 
 public class Offre {
       private int idofr;

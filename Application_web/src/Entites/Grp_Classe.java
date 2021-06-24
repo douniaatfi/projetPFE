@@ -1,18 +1,18 @@
 package Entites;
 
-public class Classe extends Groupe {
+public class Grp_Classe extends Groupe {
+     
         private int idclasse;
-        
-        public Classe( String nom, String photogr, String description) {
+        public Grp_Classe( String nom, String photogr, String description) {
 			super( nom,photogr,description);
 		} 
 
-		public Classe(int idclasse, String nom, String photogr, String description) {
+		public Grp_Classe(int idclasse, String nom, String photogr, String description) {
 			super(nom,photogr,description);
 			this.idclasse = idclasse;
 		}
 
-		public Classe() {
+		public Grp_Classe() {
 			super();
 		}
 

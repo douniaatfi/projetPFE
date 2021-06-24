@@ -1,23 +1,22 @@
 package Entites;
 
-public class Exposer extends Groupe {
+public class Grp_Exposer extends Groupe {
       private int idexp;
       private String date_creation;
       private String date_expiration;
       
-	  public Exposer() {
+	  public Grp_Exposer() {
 		super();
 		
 	  }
 
-	
-	public Exposer(int idexp,String nom, String photogr, String description ,String date_creation, String date_expiration) {
+	public Grp_Exposer(int idexp,String nom, String photogr, String description ,String date_creation, String date_expiration) {
 		super(nom,photogr,description);
 		this.idexp = idexp;
 		this.date_creation = date_creation;
 		this.date_expiration = date_expiration;
 	}
-	public Exposer(String nom, String photogr, String description ,String date_creation, String date_expiration) {
+	public Grp_Exposer(String nom, String photogr, String description ,String date_creation, String date_expiration) {
 		super(nom,photogr,description);
 		this.date_creation = date_creation;
 		this.date_expiration = date_expiration;

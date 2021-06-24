@@ -3,7 +3,7 @@ package Entites;
 public class Fichier extends Publication{
     private int idfichier;
     private String urlf;
-    
+    private String type;
     
 	public Fichier() {
 		super();

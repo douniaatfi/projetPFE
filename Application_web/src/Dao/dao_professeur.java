@@ -14,7 +14,7 @@ public class dao_professeur {
 		Connexion.disconnect();
 		return res;
 	}
-	public static boolean etudiantExist(String email) throws ClassNotFoundException, SQLException {
+	public static boolean profExist(String email) throws ClassNotFoundException, SQLException {
 		boolean exist = false;
 		Connexion.connect();
 		ResultSet res=Connexion.Select("select * from user where login='"+email+"'");
@@ -53,7 +53,7 @@ public class dao_professeur {
 	    public  ArrayList<Professeur> listeprof() throws SQLException, ClassNotFoundException{
 			ArrayList<Professeur> profs = new ArrayList<Professeur>();
 			Connexion.connect();
-			ResultSet res = Connexion.Select("select * from user");
+			ResultSet res = Connexion.Select("select * from user where role= 'professeur'");
 			while(res.next()) {
 				Professeur p =new Professeur(res.getInt(1), res.getString(2), res.getString(3),res.getString(4),res.getString(5),res.getString(6), res.getString(7), res.getString(8));
 			        profs.add(p);

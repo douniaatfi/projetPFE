@@ -2,7 +2,9 @@ package Dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import Entites.Groupe;
 import Entites.Message;
 
 public class dao_message {
@@ -35,4 +37,15 @@ public class dao_message {
     	Connexion.disconnect();
     	return msg;
     }
+    public  ArrayList<Message> listemessage(int id) throws SQLException, ClassNotFoundException{
+		ArrayList<Message> msgs = new ArrayList<Message>();
+		Connexion.connect();
+		ResultSet res = Connexion.Select("select * from message where type ="+id);
+		while(res.next()) {
+			Message grp =new Message(res.getInt(1), res.getString(2), res.getString(3));
+			   msgs.add(grp);
+		}
+		Connexion.disconnect();
+		return msgs;
+	}
 }
