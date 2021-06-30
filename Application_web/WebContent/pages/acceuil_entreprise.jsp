@@ -7,28 +7,23 @@ if(e==null){
 
 %>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Page d'acceuil &mdash; FSBM-Community</title>
+  <title>Acceuil &mdash; FSBMCOMMUNITY</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="../node_modules/jqvmap/dist/jqvmap.min.css">
-  <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
-  <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/components.css">
-    <link rel="stylesheet" href="./assets/css/inscription.css">
+   <link rel="stylesheet" href="./assets/css/inscription.css">
 </head>
 
 <body>
@@ -42,46 +37,25 @@ if(e==null){
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
           </ul>
           <div class="search-element">
-            <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search" data-width="250">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
             <div class="search-backdrop"></div>
             <div class="search-result">
-              <div class="search-header">
-                Histories
-              </div>
+              
+              
             </div>
           </div>
         </form>
         <ul class="navbar-nav navbar-right">
-         <li class="dropdown dropdown-list-toggle"><a href="acceuil_etudiant.jsp" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="fas fa-home"></i></a>
+          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
            
           </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="fas fa-envelope"></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Messages</div>
-                
-            
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-          </div>
-          </li>
-          <li class="dropdown dropdown-list-toggle"><a  href="ev_admin.jsp"  class="nav-link  nav-link-lg "><i class="fas fa-calendar-alt"></i></a>
+          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-home"></i></a>
            
-          </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-briefcase "></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Les offres</div>
-              
-              
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block"> <%=e.getNom() %></div></a>
+            <div class="d-sm-none d-lg-inline-block">Nom Entreprise</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in 5 min ago</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
@@ -91,70 +65,51 @@ if(e==null){
                 <i class="fas fa-bolt"></i> Activities
               </a>
               <a href="features-settings.html" class="dropdown-item has-icon">
-                <i class="fas fa-cog"></i> Paramétre
+                <i class="fas fa-cog"></i> Paramaitres
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
-                <i class="fas fa-sign-out-alt"></i> déconnecter
+              <a href="page_authentification.jsp" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
               </a>
             </div>
           </li>
         </ul>
       </nav>
-                 
-                
-      
-                 
-                 
-                 
-                 
-                 
-      
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">FSBM-Community</a>
+            <a href="index.html">FSBM COMMUNITY</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">I-C</a>
+            <a href="index.html"></a>
           </div>
           <ul class="sidebar-menu">
-              
-              <li class="nav-item dropdown active">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>La gestion d'utilisateur</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="#">Professeur</a></li>
-                  <li ><a class="nav-link" href="#">Etudiant</a></li>
-                  <li ><a class="nav-link" href="#">Entreprise</a></li>
-                </ul>
-              </li>
-            
+              <li class="menu-header">Offres</li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Les groupes</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fal fa-briefcase"></i><span>Offres</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="#">Toutes les groupes</a></li>
-                  <li><a class="nav-link" href="#">Retirer groupe </a></li>
-                  <li><a class="nav-link" href="#">chercher un groupe</a></li>
+                  <li><a class="nav-link" href="Page_offre_emploi.html">Offres Emploi</a></li>
+                  <li><a class="nav-link" href="index.html">Offres Stages</a></li>
                 </ul>
               </li>
-              <li><a class="nav-link" href="#"><i class="far fa-square"></i> <span>Acceuil</span></a></li>
-              <li><a class="nav-link" href="#"><i class="far fa-square"></i> <span>Les événements</span></a></li>
-              
-             
-              
+              <li class="menu-header">Plus</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link " data-toggle="dropdown"><i class="fal fa-calendar-alt"></i><span>Evénements</span></a>
+           
+              </li>
+              <li class="active"><a class="nav-link" href="blank.html"><i class="fal fa-hashtag"></i> <span>Hashtag</span></a></li>
+              <li class="nav-item dropdown">
+                
+              </li>
 
-            <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-              <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                <i class="fas fa-rocket"></i> Deconnecter
-              </a>
-            </div>
+            
         </aside>
       </div>
 
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
-           <div class="section-header">
+         <div class="section-header">
             <h1>Publication</h1>
             <div class="section-header-button">
               <button id="but" class="btn btn-primary">Add New</button>
@@ -183,7 +138,7 @@ if(e==null){
                          <input id="last_name" type="text" class="form-control" name="caption">
                       </div>
                     </div>
-                    <!-- 
+                     <!--
                     <div class="form-group row mb-4">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Fichier</label>
                       <div class="col-sm-12 col-md-7">
@@ -193,7 +148,7 @@ if(e==null){
                         </div>
                       </div>
                     </div>
-                  -->
+                 -->
              
                     <div class="form-group row mb-4">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
@@ -207,17 +162,13 @@ if(e==null){
               </div>
             </div>
             
-            
-            
         </section>
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2021 <div class="bullet"></div> 
+          Copyright &copy; 2021 <div class="bullet"></div> Design By <a href="https://nauval.in/">Groupe FSBM COMMUNITY</a>
         </div>
-        <div class="footer-right">
-          FSBM-Community
-        </div>
+       
       </footer>
     </div>
   </div>
@@ -231,22 +182,13 @@ if(e==null){
   <script src="../assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-  <script src="../node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
-  <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-  <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
-  <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-	
-	
    <script src="./assets/js/inscription.js"></script>
-      <script src="./assets/js/test.js"></script>	
-
+      <script src="./assets/js/test.js"></script>
   <!-- Template JS File -->
   <script src="./assets/js/scripts.js"></script>
   <script src="./assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="./assets/js/page/index.js"></script>
 </body>
 </html>
 <%} %>

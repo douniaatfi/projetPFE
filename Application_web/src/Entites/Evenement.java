@@ -1,6 +1,5 @@
 package Entites;
 
-import java.sql.Date;
 
 public class Evenement {
       private int idevenm;

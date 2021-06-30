@@ -11,8 +11,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets1/img/favicon.png" rel="icon">
-  <link href="assets1/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets1/img/logo-fsb2.png" rel="icon">
+  <link href="assets1/img/logo-fsb2.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -36,15 +36,15 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets1/img/logo.png" alt="">
-        <span>FSBM-community</span>
+      <a href="index.html" >
+        <img src="assets1/img/mon_logo.png" alt="" width="150">
+        
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
          
-          <li><a class="getstarted scrollto" href="pages/choixInscri.jsp">S'inscrire</a></li>
+          <li><a class="getstarted scrollto" href="http://localhost:8080/Application_web/choixInscri">S'inscrire</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -62,7 +62,7 @@
           <h2 data-aos="fade-up" data-aos-delay="400">Servez-vous du réseautage professionnel pour faire progresser votre carrière</h2><br>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <a href="pages/page_authentification.jsp" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="http://localhost:8080/Application_web/authentification_user" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>S'identifier</span>
                 <i class="bi bi-arrow-right"></i>
               </a>

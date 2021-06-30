@@ -20,20 +20,18 @@ public class inscri_etudiant extends HttpServlet {
     
     public inscri_etudiant() {
         super();
-        
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+		this.getServletContext().getRequestDispatcher("/pages/inscription_etudiant.jsp").include(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		boolean res = false;
-		PrintWriter out=response.getWriter();
-		Etudiant e = new Etudiant (request.getParameter("nom"),request.getParameter("prenom"),request.getParameter("login"),request.getParameter("password"),request.getParameter("date_naissance") ,request.getParameter("adresse"),request.getParameter("cin"),request.getParameter("cne") ,Integer.parseInt(request.getParameter("code_ap")));
-	    try {
+		Etudiant e = new Etudiant (request.getParameter("nom"),request.getParameter("prenom"),request.getParameter("login"),request.getParameter("password"),request.getParameter("date_naissance") ,request.getParameter("adresse"),request.getParameter("cne"),Integer.parseInt(request.getParameter("code_ap")),request.getParameter("cin"));
+		    System.out.println("etudiant"+ e);
+		try {
 		  res=ser_etudiant.AjouterEtudiant(e);
 		  
 		} catch (ClassNotFoundException | SQLException e1) {
@@ -41,7 +39,7 @@ public class inscri_etudiant extends HttpServlet {
 			e1.printStackTrace();
 		}
 	    if(res) {response.sendRedirect("http://localhost:8080/Application_web/authentification_user"); }
-	    else {response.sendRedirect("http://localhost:8080/Application_web/inscription_etudiant");}
+	    else {response.sendRedirect("http://localhost:8080/Application_web/inscri_etudiant");}
 	    
 	
 	}

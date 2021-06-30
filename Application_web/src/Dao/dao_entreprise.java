@@ -9,14 +9,14 @@ public class dao_entreprise {
 	    
 	public static int AjouterEntreprise(Entreprise e) throws SQLException, ClassNotFoundException {
 		Connexion.connect();
-		int res=Connexion.Maj("insert into entreprise(nom,login,password,adresse,tele) values('"+e.getNom()+"','"+e.getLogin()+"','"+e.getPassword()+"','"+e.getAdresse()+"',"+e.getTele()+")");
+		int res=Connexion.Maj("insert into user(nom,login,password,adresse,tele,tempdispo,role) values('"+e.getNom()+"','"+e.getLogin()+"','"+e.getPassword()+"','"+e.getAdresse()+"',"+e.getTele()+",'"+e.getTempdispo()+"','role')");
 		Connexion.disconnect();
 		return res;
 	}
 	public static boolean EntrepriseExist(String email) throws ClassNotFoundException, SQLException {
 		boolean exist = false;
 		Connexion.connect();
-		ResultSet res=Connexion.Select("select * from entreprise where login='"+email+"'");
+		ResultSet res=Connexion.Select("select * from user where login='"+email+"'");
 		if(res.next()) {
 			exist=true;
 		}
@@ -28,7 +28,7 @@ public class dao_entreprise {
 		ResultSet res = null;
 		Entreprise e=null;
 		Connexion.connect();
-		res = Connexion.Select("select * from entreprise where login='"+login+"' and password='"+password+"'");
+		res = Connexion.Select("select * from user where login='"+login+"' and password='"+password+"'");
 		if(res.next()) {
 			e=new Entreprise(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getInt(6),res.getString(7));
 			

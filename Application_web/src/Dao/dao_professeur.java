@@ -10,7 +10,7 @@ import Entites.Professeur;
 public class dao_professeur {
 	public static int AjouterProfesseur(Professeur p) throws SQLException, ClassNotFoundException {
 		Connexion.connect();
-		int res=Connexion.Maj("insert into user(nom,prenom,login,password,date_naissance,adresse,cin,role) values('"+p.getNom()+"','"+p.getPrenom()+"','"+p.getLogin()+"','"+p.getPassword()+"',TO_DATE("+p.getDate_naissance()+",'YYYY-MM-DD'),'"+p.getAdresse()+"','"+p.getCin()+"', 'professeur')");
+		int res=Connexion.Maj("insert into user(nom,prenom,login,password,date_naissance,adresse,cin,role) values('"+p.getNom()+"','"+p.getPrenom()+"','"+p.getLogin()+"','"+p.getPassword()+"','"+p.getDate_naissance()+"','"+p.getAdresse()+"','"+p.getCin()+"', 'professeur')");
 		Connexion.disconnect();
 		return res;
 	}

@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="../node_modules/selectric/public/selectric.css">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
 </head>
 
 <body>
@@ -24,7 +24,8 @@
         <div class="row">
           <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
             <div class="login-brand">
-              
+               <img src="./assets/img/mon_logo.png" alt="logo" width="150" >
+           
             </div>
 
             <div class="card card-primary">
@@ -57,12 +58,13 @@
                     </div>
                   </div>
                   <div class="row">
+                    
                    <div class="form-group col-6">
-                    <label for="email">Age</label>
-                    <input id="email" type="number" class="form-control" name="age">
-                    <div class="invalid-feedback">
-                    </div>
-                  </div>
+                      <div class="card">
+                      <label for="email">Date</label>
+                      <input type="date" name="date_naissance" class="form-control">
+                      </div>
+                    </div> 
                    <div class="form-group col-6">
                     <label for="email">Adresse</label>
                     <input id="email" type="text" class="form-control" name="adresse">
@@ -72,25 +74,27 @@
                   </div>
                    <div class="row">
                    <div class="form-group col-6">
-                    <label for="email">CIN</label>
-                    <input id="email" type="text" class="form-control" name="cin">
-                    <div class="invalid-feedback">
-                    </div>
-                  </div>
-                  <div class="form-group col-6">
                     <label for="email">CNE</label>
                     <input id="email" type="text" class="form-control" name="cne">
                     <div class="invalid-feedback">
                     </div>
                   </div>
-                  </div>
-                  <div class="form-group col-6">
+                    <div class="form-group col-6">
                     <label for="email">Code_apogee</label>
                     <input id="email" type="number" class="form-control" name="code_ap">
                     <div class="invalid-feedback">
                     </div>
                   </div>
+                 
                   
+                  </div>
+                  
+                   <div class="form-group col-6">
+                    <label for="email">CIN</label>
+                    <input id="email" type="text" class="form-control" name="cin">
+                    <div class="invalid-feedback">
+                    </div>
+                  </div>
                   
                   <div class="row">
                   <div class="form-group col-6 offset-3">
@@ -124,10 +128,10 @@
   <script src="../node_modules/selectric/public/jquery.selectric.min.js"></script>
 
   <!-- Template JS File -->
-  <script src="../assets/js/scripts.js"></script>
-  <script src="../assets/js/custom.js"></script>
+  <script src="./assets/js/scripts.js"></script>
+  <script src="./assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="../assets/js/page/auth-register.js"></script>
+  <script src="./assets/js/page/auth-register.js"></script>
 </body>
 </html>

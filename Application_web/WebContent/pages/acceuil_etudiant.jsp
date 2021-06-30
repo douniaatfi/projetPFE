@@ -1,3 +1,12 @@
+<%@page import="Entites.User"%>
+<% User e = (User)session.getAttribute("user"); 
+if(e==null){
+	response.sendRedirect("http://localhost:8080/Dounia_Atfi/authentification_user");
+
+}else{
+
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +25,9 @@
   <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+   <link rel="stylesheet" href="./assets/css/inscription.css">
 </head>
 
 <body>
@@ -39,8 +49,8 @@
             </div>
           </div>
         </form>
-        <ul class="navbar-nav navbar-right">
-          <li class="dropdown dropdown-list-toggle"><a href="acceuil_etudiant.jsp" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="fas fa-home"></i></a>
+         <ul class="navbar-nav navbar-right">
+         <li class="dropdown dropdown-list-toggle"><a href="acceuil_etudiant.jsp" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="fas fa-home"></i></a>
            
           </li>
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="fas fa-envelope"></i></a>
@@ -53,17 +63,10 @@
               </div>
           </div>
           </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-calendar-alt"></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Evénements</div>
-              
-              
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
+          <li class="dropdown dropdown-list-toggle"><a  href="ev_admin.jsp"  class="nav-link  nav-link-lg "><i class="fas fa-calendar-alt"></i></a>
+           
           </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-briefcase"></i></a>
+          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-briefcase "></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header">Les offres</div>
               
@@ -75,7 +78,7 @@
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+            <div class="d-sm-none d-lg-inline-block"><%=e.getNom() %></div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in 5 min ago</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
@@ -103,11 +106,55 @@
            <div class="section-header">
             <h1>Publication</h1>
             <div class="section-header-button">
-              <a href="ajouter_pub.jsp" class="btn btn-primary">Add New</a>
+              <button id ="but" class="btn btn-primary">Add New</button>
             </div>
           
           </div>
          <!-- main -->
+          <div class="row">
+                <div class="col-lg-12" id="connex5">
+                </div>
+           </div>
+       		
+       		<div class="row">
+              <div class="col-7" id="connex6">
+                <div class="card">
+                 
+                    <div class="col-lg-2 offset-lg-8 connex8">
+                            <i id="i1" class='fa fa-times'></i>
+                       </div>
+                  <div class="card-body" >
+                 <form action="ajout_publication" method="post">
+               
+                   <div class="form-group row mb-4">
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Contenu</label>
+                      <div class="col-sm-12 col-md-7">
+                         <input id="last_name" type="text" class="form-control" name="caption">
+                      </div>
+                    </div>
+                    <!-- 
+                    <div class="form-group row mb-4">
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Fichier</label>
+                      <div class="col-sm-12 col-md-7">
+                        <div id="image-preview" class="image-preview">
+                          <label for="image-upload" id="image-label">Choose File</label>
+                          <input type="file" name="image" id="image-upload" />
+                        </div>
+                      </div>
+                    </div>
+                  -->
+             
+                    <div class="form-group row mb-4">
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                      <div class="col-sm-12 col-md-7">
+                        <button class="btn btn-primary">Create Post</button>
+                      </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
         </section>
       </div>
       <footer class="main-footer">
@@ -127,7 +174,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="../assets/js/stisla.js"></script>
+  <script src="./assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
   <script src="../node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
@@ -136,11 +183,15 @@
   <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
   <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 
+ <script src="./assets/js/inscription.js"></script>
+      <script src="./assets/js/test.js"></script>	
+
   <!-- Template JS File -->
-  <script src="../assets/js/scripts.js"></script>
-  <script src="../assets/js/custom.js"></script>
+  <script src="./assets/js/scripts.js"></script>
+  <script src="./assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="../assets/js/page/index.js"></script>
+  <script src="./assets/js/page/index.js"></script>
 </body>
 </html>
+<%}%>

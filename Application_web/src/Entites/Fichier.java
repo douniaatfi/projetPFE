@@ -11,13 +11,13 @@ public class Fichier extends Publication{
 	}
 	
 	public Fichier( int idfichier, String urlf, String datepub, String contenupub) {
-		super( datepub, contenupub);
+		
 		this.idfichier =idfichier;
 		this.urlf = urlf;
 	}
 	
 	public Fichier(String urlf, String datepub, String contenupub) {
-		super( datepub, contenupub);
+		
 		this.urlf = urlf;
 	}
 	

@@ -4,6 +4,7 @@ public class Publication {
      private int idpublication;
      private String DatePu;
      private String caption;
+     private String urlimg;
  
      
 	public Publication() {
@@ -44,17 +45,24 @@ public class Publication {
 	public Publication(int idpublication, String datePu, String caption) {
 		super();
 		this.idpublication = idpublication;
-		DatePu = datePu;
+		this.DatePu = datePu;
 		this.caption = caption;
 	}
-	public Publication (String datePu, String caption) {
-		super();
-		DatePu = datePu;
-		this.caption = caption;
+	
+	public String getUrlimg() {
+		return urlimg;
 	}
-	public Publication (String caption) {
-		super();
+
+
+	public void setUrlimg(String urlimg) {
+		this.urlimg = urlimg;
+	}
+
+
+	public Publication(String caption) {
+		
 		this.caption = caption;
+	
 	}
 	@Override
 	public String toString() {

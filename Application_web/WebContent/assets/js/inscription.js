@@ -3,6 +3,7 @@ window.onload=function(){
     document.getElementById("i1").addEventListener("click",disp);
     document.getElementById("connex5").addEventListener("click",disp_left);
 }
+
 function inscrit()
 {
     document.getElementById("connex5").style.display="block";

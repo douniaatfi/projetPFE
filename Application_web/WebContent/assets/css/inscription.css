@@ -1,3 +1,7 @@
+#pub{
+	display:none;
+}
+
 #but{
     background-color:;
     color: white;
@@ -15,7 +19,7 @@
 }
 #connex5{
     top: -554px;
-    height: 608px;
+    height: 1000px;
     background-color: white;
     opacity: 0.6;
     display: none;
@@ -42,10 +46,11 @@
 .connex7{
     margin-top: 3%;
 }
-#i1{
-    font-size: 30px;
-    color: rgba(0, 0, 0, 0.603);
+#i1{color:red;
+    font-size: 24px;
+    
     cursor: pointer;
+    margin-left:100px;
 }
 .connex8{
     margin-top: 2%;

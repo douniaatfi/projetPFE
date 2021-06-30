@@ -15,15 +15,13 @@
   <link rel="stylesheet" href="../node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/components.css">
-  <script src="./assets/js/image.js"></script>
-  <script src="./assets/js/jquery.js"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
 <body>
   <div id="app">
-    <div class="main-wrapper">s
+    <div class="main-wrapper">
       <div class="navbar-bg"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
@@ -262,34 +260,33 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Ajouter publication </h4>
+                    <h4>Ajouter Evenement </h4>
                   </div>
                   <div class="card-body">
                        
-                       <form action="ajout_publication" method="post" >
+                       <form action="ajouter_pub" method="post">
                
                     <div class="form-group row mb-4">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Contenu</label>
                       <div class="col-sm-12 col-md-7">
-                         <input id="last_name" type="text" class="form-control" name="caption">
+                         <input id="last_name" type="text" class="form-control" name="Caption">
                       </div>
                     </div>
-                   
+                    <!-- 
                     <div class="form-group row mb-4">
-                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"><a href="#">Ajouter une image :</a></label>
-                     
-                    </div>
-                     <!--
-                     <div id="img" class="form-group row mb-4">
-                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Contenu</label>
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Fichier</label>
                       <div class="col-sm-12 col-md-7">
-                         <input id="last_name" type="file" class="form-control" name="name">
+                        <div id="image-preview" class="image-preview">
+                          <label for="image-upload" id="image-label">Choose File</label>
+                          <input type="file" name="image" id="image-upload" />
+                        </div>
                       </div>
-                    </div> -->
+                    </div>
+                    -->
                     <div class="form-group row mb-4">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                       <div class="col-sm-12 col-md-7">
-                        <button class="btn btn-primary"  ">Create Post</button>
+                        <button class="btn btn-primary">Create Evenement</button>
                       </div>
                     </div>
                     </form>
@@ -311,7 +308,7 @@
     </div>
   </div>
 
-  <!--  enctype="multipart/form-data"   onclick="upload_image()   General JS Scripts -->
+  <!-- General JS Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

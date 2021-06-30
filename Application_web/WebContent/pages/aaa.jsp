@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/inscription.css">
-      <script src="../assets/js/inscription.js"></script>
+      <script src="./assets/js/inscription.js"></script>
  
 </head>
 
