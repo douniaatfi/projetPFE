@@ -41,6 +41,10 @@ public class Etudiant extends User {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	public String getNom() {
+		return super.getNom();
+	}
+	
 	public String getDate_naissance() {
 		return date_naissance;
 	}
@@ -74,9 +78,11 @@ public class Etudiant extends User {
 	}
 	@Override
 	public String toString() {
-		return "Etudiant [ ide=" + ide + ", prenom=" + prenom + ", date_naissance=" + date_naissance + ", cin=" + cin
+		return super.toString()+" [ ide=" + ide + ", prenom=" + prenom + ", date_naissance=" + date_naissance + ", cin=" + cin
 				+ ", cne=" + cne + ", code_ap=" + code_ap + "]";
 	}
-	
+	public void affiche() {
+		super.toString();
+	}
 	
 }

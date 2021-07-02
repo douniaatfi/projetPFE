@@ -41,28 +41,28 @@ public class dao_etudiant {
 	    	return res;
 	    }
 	
-	/*    public  Etudiant  consulter_etudiant(Etudiant et) throws ClassNotFoundException, SQLException  {
+	   public  Etudiant  consulter_etudiant(Etudiant et) throws ClassNotFoundException, SQLException  {
 	    	Etudiant e = null;
 	    	Connexion.connect();
 	    	ResultSet res=Connexion.Select("select * from user where id ="+et.getId()+"");
 	    	if(res.next()) {
-	    	  e =new Etudiant(res.getInt(1), res.getString(2), res.getString(3),res.getString(4),res.getString(5),res.getString(6), res.getString(7), res.getString(8), res.getString(9),res.getInt(10));
+	    	 // e =new Etudiant(res.getInt(1), res.getString(2), res.getString(3),res.getString(4),res.getString(5),res.getString(6), res.getString(7), res.getString(8), res.getString(9),res.getInt(10));
 			}
 			Connexion.disconnect();
 			return e;
 	    }
 	
-	    public  ArrayList<Etudiant> listeetudiant() throws SQLException, ClassNotFoundException{
+	    public  static ArrayList<Etudiant> listeetudiant() throws SQLException, ClassNotFoundException{
 			ArrayList<Etudiant> etudiants = new ArrayList<Etudiant>();
 			Connexion.connect();
-			ResultSet res = Connexion.Select("select * from user");
+			ResultSet res = Connexion.Select("select * from user where role ='etudiant'");
 			while(res.next()) {
-				Etudiant e =new Etudiant(res.getInt(1), res.getString(2), res.getString(3),res.getString(4),res.getString(5),res.getString(6), res.getString(7), res.getString(8), res.getString(9),res.getInt(10));
+				Etudiant e =new Etudiant(res.getInt(1), res.getString(3), res.getString(4),res.getString(5),res.getString(6),res.getString(7), res.getString(8), res.getString(11), res.getInt(12),res.getString(13));
 				etudiants.add(e);
 			}
 			Connexion.disconnect();
 			return etudiants;
 		}
 	
-*/
+
 }

@@ -48,7 +48,11 @@ public class Publication {
 		this.DatePu = datePu;
 		this.caption = caption;
 	}
-	
+	public Publication(String caption, String urlimg) {
+		super();
+		this.caption = caption;
+		this.urlimg = urlimg;
+	}
 	public String getUrlimg() {
 		return urlimg;
 	}

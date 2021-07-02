@@ -1,3 +1,23 @@
+<%@page import="Entites.Offre"%>
+<%@page import="Entites.Offreemploi"%>
+<%@page import="Entites.User"%>
+<%@page import="Services.ser_emploi"%>
+<%@page import="java.util.ArrayList"%>
+<% User e = (User)session.getAttribute("user"); 
+if(e==null){
+	response.sendRedirect("http://localhost:8080/Dounia_Atfi/authentification_user");
+
+}else{
+
+%>
+<% String  sup = request.getParameter("op");
+   
+if(sup!=null && sup.equals("delete")&& request.getParameter("id")!=null){
+	
+	int idsup =Integer.parseInt(request.getParameter("id"));
+	ser_emploi.supp_off_emploi(idsup);
+}
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +32,8 @@
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
 </head>
 
 <body>
@@ -51,19 +71,19 @@
               </div>
               <div class="search-item">
                 <a href="#">
-                  <img class="mr-3 rounded" width="30" src="../assets/img/products/product-3-50.png" alt="product">
+                  <img class="mr-3 rounded" width="30" src="./assets/img/products/product-3-50.png" alt="product">
                  Faculté des Sciences Ben M'Sik
                 </a>
               </div>
               <div class="search-item">
                 <a href="#">
-                  <img class="mr-3 rounded" width="30" src="../assets/img/products/product-2-50.png" alt="product">
+                  <img class="mr-3 rounded" width="30" src="./assets/img/products/product-2-50.png" alt="product">
                  CapgeMini
                 </a>
               </div>
               <div class="search-item">
                 <a href="#">
-                  <img class="mr-3 rounded" width="30" src="../assets/img/products/product-1-50.png" alt="product">
+                  <img class="mr-3 rounded" width="30" src="./assets/img/products/product-1-50.png" alt="product">
                   Technoparck Casablanca
                 </a>
               </div>
@@ -100,7 +120,7 @@
               <div class="dropdown-list-content dropdown-list-message">
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle">
+                    <img alt="image" src="./assets/img/avatar/avatar-1.png" class="rounded-circle">
                     <div class="is-online"></div>
                   </div>
                   <div class="dropdown-item-desc">
@@ -111,7 +131,7 @@
                 </a>
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-2.png" class="rounded-circle">
+                    <img alt="image" src="./assets/img/avatar/avatar-2.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>Dounia Atfi</b>
@@ -121,7 +141,7 @@
                 </a>
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-3.png" class="rounded-circle">
+                    <img alt="image" src="./assets/img/avatar/avatar-3.png" class="rounded-circle">
                     <div class="is-online"></div>
                   </div>
                   <div class="dropdown-item-desc">
@@ -132,7 +152,7 @@
                 </a>
                 <a href="#" class="dropdown-item">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-4.png" class="rounded-circle">
+                    <img alt="image" src="./assets/img/avatar/avatar-4.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>El Filali Sanae</b>
@@ -142,7 +162,7 @@
                 </a>
                 <a href="#" class="dropdown-item">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-5.png" class="rounded-circle">
+                    <img alt="image" src="./assets/img/avatar/avatar-5.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>Sakhi Hasnae</b>
@@ -172,10 +192,10 @@
             </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Nom Entreprise</div></a>
+            <img alt="image" src="./assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+            <div class="d-sm-none d-lg-inline-block"><%= e.getNom() %></div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
+              <div class="dropdown-title"></div>
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
@@ -220,7 +240,7 @@
                   
                 </li>
   
-              
+              </ul>
           </aside>
         
       </div>
@@ -242,73 +262,60 @@
             <p class="section-lead">
               vous pouvez ajoutez un nouveau emploi <a href="http://www.chartjs.org/">here</a>
             </p>
-
+              <% ArrayList<Offreemploi> liste = ser_emploi.listeemploi(); %>
             <div class="row">
+            <%  for(Offreemploi ofr : liste){ %>
               <div class="col-12 col-md-6 col-lg-6">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Offre 1 : </h4>
+                    <h4><%= ofr.getNom()%> : </h4>
                   </div>
-                  <div class="card-body">
-                    <canvas id="myChart"></canvas>
+                   <div class="card-body">
+                   
+                    <p> Description :<%= ofr.getDescription()%></p>
+                    <p>Contrainte :<%= ofr.getContrainte()%></p>
+                   <p>Type de contrat :<%= ofr.getTypecontrat()%></p>
+                    <p> Le salaire :<%= ofr.getSalaire()%></p>
+                    
+                  
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary">Modifier</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Supprimer</button>
+                        <button type="button" data-toggle="modal" data-target="#sup_offre" class="btn btn-danger but" onclick="supprimer(<%=ofr.getIdofremp()%>)">Supprimer</button>
+                                             
                       </div>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-lg-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Offre 2 : </h4>
-                  </div>
-                  <div class="card-body">
-                    <canvas id="myChart2"></canvas>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Modifier</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Supprimer</button>
-                      </div>
-                  </div>
-                </div>
+              <% }%> 
               </div>
             </div>
-            <div class="row">
-              <div class="col-12 col-md-6 col-lg-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Offre 3 : </h4>
-                  </div>
-                  <div class="card-body">
-                    <canvas id="myChart3"></canvas>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Modifier</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Supprimer</button>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Offre 4 : </h4>
-                  </div>
-                  <div class="card-body">
-                    <canvas id="myChart4"></canvas>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Modifier</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Supprimer</button>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         
         </section>
       </div>
+      
+      <!-- Modal -->
+<div class="modal fade" id="sup_offre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Supprimer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        confirmer votre suppression
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <a type="button" id="confirme" class="btn btn-primary">Confirmer</a>
+      </div>
+    </div>
+  </div>
+</div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2021 <div class="bullet"></div> Design By <a href="https://nauval.in/">groupe FSBM COMMUNITY</a>
+          Copyright &copy; 2021 <div class="bullet"></div>
         </div>
         <div class="footer-right">
           2.3.0
@@ -316,23 +323,24 @@
       </footer>
     </div>
   </div>
-
+  
   <!-- General JS Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="../assets/js/stisla.js"></script>
+  <script src="./assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-  <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="./node_modules/chart.js/dist/Chart.min.js"></script>
 
   <!-- Template JS File -->
-  <script src="../assets/js/scripts.js"></script>
-  <script src="../assets/js/custom.js"></script>
-
+  <script src="./assets/js/scripts.js"></script>
+  <script src="./assets/js/custom.js"></script>
+  <script src="./assets/js/inscription.js"></script>
   <!-- Page Specific JS File -->
-  <script src="../assets/js/page/modules-chartjs.js"></script>
+  <script src="./assets/js/page/modules-chartjs.js"></script>
 </body>
 </html>
+<%}%>

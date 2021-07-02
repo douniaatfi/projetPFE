@@ -12,7 +12,14 @@ public class Offre {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Offre(int idofr, String nom, String description, String date, String containte) {
+	public Offre(int idofr, String nom, String description,  String contrainte) {
+		super();
+		this.idofr = idofr;
+		this.nom = nom;
+		this.description = description;
+		this.contrainte = contrainte;
+	}
+	public Offre(int idofr, String nom, String description, String date, String contrainte) {
 		super();
 		this.idofr = idofr;
 		this.nom = nom;
@@ -25,6 +32,12 @@ public class Offre {
 		this.nom = nom;
 		this.description = description;
 		this.date = date;
+		this.contrainte = contrainte;
+	}
+	public Offre( String nom, String description, String contrainte) {
+		super();
+		this.nom = nom;
+		this.description = description;
 		this.contrainte = contrainte;
 	}
 	public int getIdofr() {

@@ -1,13 +1,22 @@
 package Entites;
 
-import java.sql.Date;
-
 public class Message {
       private int idmsg;
+      private int ide;
+      private int idr;
       private String text;
       private String date;
       
       
+	
+	public Message(int idmsg, int ide, int idr, String text, String date) {
+		super();
+		this.idmsg = idmsg;
+		this.ide = ide;
+		this.idr = idr;
+		this.text = text;
+		this.date = date;
+	}
 	public Message() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -22,6 +31,26 @@ public class Message {
 		super();
 		this.text = text;
 		this.date = date;
+	}
+	public Message(int ide,int idr, String text, String date) {
+		super();
+		this.ide = ide;
+		this.idr = idr;
+		this.text = text;
+		this.date = date;
+	}
+	
+	public int getIde() {
+		return ide;
+	}
+	public void setIde(int ide) {
+		this.ide = ide;
+	}
+	public int getIdr() {
+		return idr;
+	}
+	public void setIdr(int idr) {
+		this.idr = idr;
 	}
 	public int getIdmsg() {
 		return idmsg;
@@ -43,8 +72,9 @@ public class Message {
 	}
 	@Override
 	public String toString() {
-		return "Message [idmsg=" + idmsg + ", text=" + text + ", date=" + date + "]";
+		return "Message [idmsg=" + idmsg + ", ide=" + ide + ", idr=" + idr + ", text=" + text + ", date=" + date + "]";
 	}
+	
       
       
 }

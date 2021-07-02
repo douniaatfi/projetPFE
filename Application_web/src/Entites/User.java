@@ -1,6 +1,6 @@
 package Entites;
 
-import java.sql.Date;
+
 
 public class User {
      private int id;
@@ -75,6 +75,11 @@ public class User {
 		return "User [id=" + id + ", nom=" + nom + ",  login=" + login + ", password=" + password
 				+ ", adresse=" + adresse +
 				"]";
+	}
+
+	public int getIdentreprise() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	

@@ -16,7 +16,7 @@ public class acceuil_entreprise extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/pages/acceuil_etudiant.jsp").include(request, response);
+		this.getServletContext().getRequestDispatcher("/pages/acceuil_entreprise2.jsp").include(request, response);
 		
 	}
 	

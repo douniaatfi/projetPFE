@@ -7,28 +7,24 @@ if(e==null){
 }else{
 
 %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Page d'acceuil &mdash; FSBM-Community</title>
+  <title>Profile etudiants</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="../node_modules/jqvmap/dist/jqvmap.min.css">
-  <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
-  <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="./node_modules/summernote/dist/summernote-bs4.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/components.css">
-   <link rel="stylesheet" href="./assets/css/inscription.css">
 </head>
 
 <body>
@@ -51,104 +47,87 @@ if(e==null){
           </div>
         </form>
          <ul class="navbar-nav navbar-right">
-         <li class="dropdown dropdown-list-toggle"><a href="http://localhost:8080/Application_web/acceuil" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="fas fa-home"></i></a>
+         <li class="dropdown dropdown-list-toggle"><a href="acceuil_etudiant.jsp" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="fas fa-home"></i></a>
            
           </li>
           <li class="dropdown dropdown-list-toggle"><a href="http://localhost:8080/Application_web/message"  class="nav-link nav-link-lg "><i class="fas fa-envelope"></i></a>
             
           </li>
-          <li class="dropdown dropdown-list-toggle"><a  href="#"  class="nav-link  nav-link-lg "><i class="fas fa-calendar-alt"></i></a>
+          <li class="dropdown dropdown-list-toggle"><a  href="ev_admin.jsp"  class="nav-link  nav-link-lg "><i class="fas fa-calendar-alt"></i></a>
            
           </li>
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-briefcase "></i></a>
            
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+            <img alt="image" src="./assets/img/avatar/fotop.jpg" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block"><%=e.getNom() %></div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              
-              <a href="http://localhost:8080/Application_web/profile" class="dropdown-item has-icon">
+              <div class="dropdown-title">Logged in 5 min ago</div>
+              <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
-             
+              <a href="features-activities.html" class="dropdown-item has-icon">
+                <i class="fas fa-bolt"></i> Activities
+              </a>
               <a href="features-settings.html" class="dropdown-item has-icon">
-                <i class="fas fa-cog"></i> Parametrage
+                <i class="fas fa-cog"></i> Paramétre
               </a>
               <div class="dropdown-divider"></div>
-              <a href="http://localhost:8080/Application_web/authentification_user" class="dropdown-item has-icon text-danger">
-                <i class="fas fa-sign-out-alt"></i> deconnecter
+              <a href="#" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> déconnecter
               </a>
             </div>
           </li>
         </ul>
       </nav>
-                 
-  
+      
+
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
-           <div class="section-header">
-            <h1>Publication</h1>
-            <div class="section-header-button">
-              <button id ="but" class="btn btn-primary">Add New</button>
+          <div class="section-header">
+            <h1>Profile</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Acceuil</a></div>
+              <div class="breadcrumb-item">Profile</div>
             </div>
-          
           </div>
-         <!-- main -->
-          <div class="row">
-                <div class="col-lg-12" id="connex5">
-                </div>
-           </div>
-       		
-       		<div class="row">
-              <div class="col-7" id="connex6">
-                <div class="card">
-                 
-                    <div class="col-lg-2 offset-lg-8 connex8">
-                            <i id="i1" class='fa fa-times'></i>
-                       </div>
-                  <div class="card-body" >
-                 <form action="ajout_publication" method="post">
-               
-                   <div class="form-group row mb-4">
-                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Contenu</label>
-                      <div class="col-sm-12 col-md-7">
-                         <input id="last_name" type="text" class="form-control" name="caption">
-                      </div>
+          <div class="section-body">
+            <h2 class="section-title">Votre Profile</h2>
+            <p class="section-lead">
+             <a> Changer vos informations.</a>
+            </p>
+
+            <div class="row mt-sm-4">
+              <div class="col-12 col-md-12 col-lg-7">
+                <div class="card profile-widget">
+                  <div class="profile-widget-header">
+                    <img alt="image" src="./assets/img/avatar/fotop.jpg" class="rounded-circle profile-widget-picture">
+                    <div class="profile-widget-items">
+                      
                     </div>
-                    <!-- 
-                    <div class="form-group row mb-4">
-                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Fichier</label>
-                      <div class="col-sm-12 col-md-7">
-                        <div id="image-preview" class="image-preview">
-                          <label for="image-upload" id="image-label">Choose File</label>
-                          <input type="file" name="image" id="image-upload" />
-                        </div>
-                      </div>
-                    </div>
-                  -->
-             
-                    <div class="form-group row mb-4">
-                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                      <div class="col-sm-12 col-md-7">
-                        <button class="btn btn-primary">Create Post</button>
-                      </div>
-                    </div>
-                    </form>
                   </div>
+                  <div class="profile-widget-description">
+                    <div class="profile-widget-name">Dounia Atfi <div class="text-muted d-inline font-weight-normal"><div class="slash"></div> Etudiante</div></div>
+                   Je suis une etudiante a la faculte des sciences ben m'sik.
+                  </div>
+                   <div class="profile-widget-description">
+                   <p>Email : <%= e.getLogin() %></p>
+                   <p>Adress :<%= e.getAdresse() %></p>
+                   </div>
                 </div>
               </div>
+              
             </div>
+          </div>
         </section>
       </div>
       <footer class="main-footer">
         <div class="footer-left">
           Copyright &copy; 2021 <div class="bullet"></div> 
         </div>
-        <div class="footer-right">
-          FSBM-Community
-        </div>
+        
       </footer>
     </div>
   </div>
@@ -162,21 +141,13 @@ if(e==null){
   <script src="./assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-  <script src="../node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
-  <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-  <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
-  <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-
- <script src="./assets/js/inscription.js"></script>
-      <script src="./assets/js/test.js"></script>	
+  <script src="./node_modules/summernote/dist/summernote-bs4.js"></script>
 
   <!-- Template JS File -->
   <script src="./assets/js/scripts.js"></script>
   <script src="./assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="./assets/js/page/index.js"></script>
 </body>
 </html>
-<%}%>
+<%} %>

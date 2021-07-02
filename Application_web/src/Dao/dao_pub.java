@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import Entites.Publication;
 
 public class dao_pub {
-	public static int ajout_pub( int id,String text ) throws ClassNotFoundException, SQLException  {
+	public static int ajout_pub( int id,Publication pu ) throws ClassNotFoundException, SQLException  {
     	Connexion.connect();
-    	int res=Connexion.Maj("insert into publication(Id,Caption) values ("+id+",'"+text+"')");
+    	int res=Connexion.Maj("insert into publication(Id,Caption,urlimg) values ("+id+",'"+pu.getCaption()+"','"+pu.getUrlimg()+"')");
     	Connexion.disconnect();
     	return res;
     }

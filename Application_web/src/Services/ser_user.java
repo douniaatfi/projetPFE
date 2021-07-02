@@ -13,4 +13,10 @@ public class ser_user {
 	public static String getrole(String login , String password) throws ClassNotFoundException, SQLException {
 		return dao_user.roleuser(login,password);
 		}
+	
+	public static String getnom(int id) throws ClassNotFoundException, SQLException {
+		
+		return dao_user.getnom(id);
+	}
+	
 }

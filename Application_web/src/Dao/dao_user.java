@@ -23,7 +23,7 @@ public class dao_user {
 				 e = new Professeur (res.getInt("Id"), res.getString("nom"), res.getString("prenom"), res.getString("login"), res.getString("password"),res.getString("date_naissance"),  res.getString("adresse"),res.getString("cin"));
 		    }else if(res.getString("role").equals("etudiant")) {
 				e = new Etudiant (res.getInt("Id"),res.getString("nom"),res.getString("prenom"), res.getString("login"),res.getString("password"),res.getString("date_naissance"),res.getString("adresse"),res.getString("cne"),res.getInt("code_ap"),res.getString("cin"));
-				System.out.println("etudiant"+e);
+				
 			}else {
 				 e = new Entreprise (res.getInt("Id"),res.getString("nom"), res.getString("login"), res.getString("password"),res.getString("adresse"),  res.getInt("telephone"),res.getString("tempdispo"));
 			}
@@ -42,6 +42,17 @@ public class dao_user {
 		Connexion.disconnect();
 		return role;
 		
+	}
+	public static String getnom(int id) throws ClassNotFoundException, SQLException {
+		String nom = null;
+		ResultSet res = null;
+		Connexion.connect();
+		res= Connexion.Select("select nom from  user where Id ="+id);
+		if(res.next()) {
+			nom = res.getString("role");
+		}
+		Connexion.disconnect();
+		return nom;
 	}
 }
 

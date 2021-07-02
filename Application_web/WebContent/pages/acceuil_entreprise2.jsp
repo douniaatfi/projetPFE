@@ -1,29 +1,32 @@
-<!DOCTYPE html>
+
+<%@page import="Entites.User"%>
+<% User e = (User)session.getAttribute("user"); 
+if(e==null){
+	response.sendRedirect("http://localhost:8080/Dounia_Atfi/authentification_user");
+
+}else{
+
+%><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Post Create &mdash; Stisla</title>
+  <title>Acceuil &mdash; FSBMCOMMUNITY</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+<link rel="stylesheet" href="./assets/css/inscription.css">
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
-  <link rel="stylesheet" href="../node_modules/selectric/public/selectric.css">
-  <link rel="stylesheet" href="../node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/components.css">
-  <script src="./assets/js/image.js"></script>
-  <script src="./assets/js/jquery.js"></script>
 </head>
 
 <body>
   <div id="app">
-    <div class="main-wrapper">s
+    <div class="main-wrapper">
       <div class="navbar-bg"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
@@ -32,7 +35,7 @@
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
           </ul>
           <div class="search-element">
-            <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search" data-width="250">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
             <div class="search-backdrop"></div>
             <div class="search-result">
@@ -117,7 +120,7 @@
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
                     <img alt="image" src="../assets/img/avatar/avatar-2.png" class="rounded-circle">
-                  </div>
+                  </div> 
                   <div class="dropdown-item-desc">
                     <b>Dedik Sugiharto</b>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
@@ -161,7 +164,7 @@
               </div>
             </div>
           </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
+          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-home"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header">Notifications
                 <div class="float-right">
@@ -221,75 +224,102 @@
             </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+            <img alt="image" src="./assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+            <div class="d-sm-none d-lg-inline-block"><%= e.getNom() %></div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
+              <div class="dropdown-title"></div>
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
-              <a href="features-activities.html" class="dropdown-item has-icon">
-                <i class="fas fa-bolt"></i> Activities
-              </a>
-              <a href="features-settings.html" class="dropdown-item has-icon">
-                <i class="fas fa-cog"></i> Settings
-              </a>
+              
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
-                <i class="fas fa-sign-out-alt"></i> Logout
+              <a href="page_authentification.jsp" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
               </a>
             </div>
           </li>
         </ul>
       </nav>
-   
+      <div class="main-sidebar">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html">FSBM COMMUNITY</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html"></a>
+          </div>
+          <ul class="sidebar-menu">
+              <li class="menu-header">Offres</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fal fa-briefcase"></i><span>Offres</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="http://localhost:8080/Application_web/ajout_offre">ajouter Offres Emploi</a></li>
+                    <li><a class="nav-link" href="http://localhost:8080/Application_web/consulter_ofremploi">consulter Offres Emploi</a></li>
+                  <li><a class="nav-link" href="index.html">Offres Stages</a></li>
+                </ul>
+              </li>
+              <li class="menu-header">Plus</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link " data-toggle="dropdown"><i class="fal fa-calendar-alt"></i><span>Evénements</span></a>
+           
+              </li>
+              <li class="active"><a class="nav-link" href="blank.html"><i class="fal fa-hashtag"></i> <span>Hashtag</span></a></li>
+              <li class="nav-item dropdown">
+                
+              </li>
+
+            
+        </aside>
+      </div>
 
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <div class="section-header-back">
-              <a href="acceuil_etudiant.jsp" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+            <h1>Publication</h1>
+            <div class="section-header-button">
+              <button id ="but" class="btn btn-primary">Add New</button>
             </div>
-            <h1>Nouveau publication</h1>
           
           </div>
-
-          <div class="section-body">
-            
-
-            <div class="row">
-              <div class="col-12">
+         <!-- main -->
+          <div class="row">
+                <div class="col-lg-12" id="connex5">
+                </div>
+           </div>
+       		
+       		<div class="row">
+              <div class="col-7" id="connex6">
                 <div class="card">
-                  <div class="card-header">
-                    <h4>Ajouter publication </h4>
-                  </div>
-                  <div class="card-body">
-                       
-                       <form enctype="multipart/form-data" action="ajout_publication" method="post"  >
+                 
+                    <div class="col-lg-2 offset-lg-8 connex8">
+                            <i id="i1" class='fa fa-times'></i>
+                       </div>
+                  <div class="card-body" >
+                 <form action="ajout_publication" method="post">
                
-                    <div class="form-group row mb-4">
+                   <div class="form-group row mb-4">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Contenu</label>
                       <div class="col-sm-12 col-md-7">
-                         <input id="caption" type="text" class="form-control" name="caption">
+                         <input id="last_name" type="text" class="form-control" name="caption">
                       </div>
                     </div>
-                   
+                    <!-- 
                     <div class="form-group row mb-4">
-                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"><a href="#">Ajouter une image :</a></label>
-                     
-                    </div>
-                     
-                     <div id="img" class="form-group row mb-4">
-                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Contenu</label>
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Fichier</label>
                       <div class="col-sm-12 col-md-7">
-                         <input id="last_name" type="file" class="form-control" name="img">
+                        <div id="image-preview" class="image-preview">
+                          <label for="image-upload" id="image-label">Choose File</label>
+                          <input type="file" name="image" id="image-upload" />
+                        </div>
                       </div>
-                    </div> 
+                    </div>
+                  -->
+             
                     <div class="form-group row mb-4">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                       <div class="col-sm-12 col-md-7">
-                        <button  type ="submit" class="btn btn-primary"  >Create Publication</button>
+                        <button class="btn btn-primary">Create Post</button>
                       </div>
                     </div>
                     </form>
@@ -297,39 +327,34 @@
                 </div>
               </div>
             </div>
-          </div>
         </section>
       </div>
-       <footer class="main-footer">
+      <footer class="main-footer">
         <div class="footer-left">
           Copyright &copy; 2021 <div class="bullet"></div> 
         </div>
-        <div class="footer-right">
-          FSBM-Community
-        </div>
+       
       </footer>
     </div>
   </div>
 
-  <!--  enctype="multipart/form-data"   onclick="upload_image()   General JS Scripts -->
+  <!-- General JS Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="../assets/js/stisla.js"></script>
+  <script src="./assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-  <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
-  <script src="../node_modules/selectric/public/jquery.selectric.min.js"></script>
-  <script src="../node_modules/jquery_upload_preview/assets/js/jquery.uploadPreview.min.js"></script>
-  <script src="../node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="./assets/js/inscription.js"></script>
+      <script src="./assets/js/test.js"></script>	
 
   <!-- Template JS File -->
-  <script src="../assets/js/scripts.js"></script>
-  <script src="../assets/js/custom.js"></script>
+  <script src="./assets/js/scripts.js"></script>
+  <script src="./assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="../assets/js/page/features-post-create.js"></script>
 </body>
 </html>
+<%}%>

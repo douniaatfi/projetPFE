@@ -1,6 +1,7 @@
 package Services;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Dao.dao_etudiant;
 import Entites.Etudiant;
@@ -16,5 +17,7 @@ public class ser_etudiant {
 		return false;
 	}
 	
-	
+	 public static ArrayList<Etudiant> listeetudiant() throws ClassNotFoundException, SQLException{
+		 return dao_etudiant.listeetudiant();
+	 }
 }
