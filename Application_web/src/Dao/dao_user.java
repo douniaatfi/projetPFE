@@ -25,7 +25,7 @@ public class dao_user {
 				e = new Etudiant (res.getInt("Id"),res.getString("nom"),res.getString("prenom"), res.getString("login"),res.getString("password"),res.getString("date_naissance"),res.getString("adresse"),res.getString("cne"),res.getInt("code_ap"),res.getString("cin"));
 				
 			}else {
-				 e = new Entreprise (res.getInt("Id"),res.getString("nom"), res.getString("login"), res.getString("password"),res.getString("adresse"),  res.getInt("telephone"),res.getString("tempdispo"));
+				 e = new Entreprise (res.getInt("Id"),res.getString("nom"), res.getString("login"), res.getString("password"),res.getString("adresse"),  res.getInt("tele"),res.getString("tempdispo"));
 			}
 		Connexion.disconnect();
 		
